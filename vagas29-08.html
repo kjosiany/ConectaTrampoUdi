@@ -414,5 +414,27 @@
       Caso alguma empresa deseje remover ou alterar uma vaga publicada, entre em contato.</p>
     </div>
   </footer>
+  <script>
+    const inputBusca = document.createElement("input");
+    inputBusca.placeholder = "🔍 Buscar vagas...";
+    inputBusca.style.display = "block";
+    inputBusca.style.margin = "20px auto";
+    inputBusca.style.padding = "10px";
+    inputBusca.style.width = "80%";
+
+    const container = document.querySelector(".container");
+    container.insertBefore(inputBusca, container.children[1]); // insere logo abaixo do título
+
+    inputBusca.addEventListener("input", () => {
+      const termo = inputBusca.value.toLowerCase();
+      const vagas = document.querySelectorAll(".vaga");
+
+      vagas.forEach(vaga => {
+        const texto = vaga.textContent.toLowerCase();
+        vaga.style.display = texto.includes(termo) ? "block" : "none";
+      });
+    });
+      </script>
+
 </body>
 </html>
