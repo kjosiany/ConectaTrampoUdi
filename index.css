@@ -1,4 +1,3 @@
-/* ----------- ESTILOS BASE ----------- */
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -29,7 +28,6 @@ img {
   padding: 10px 0;
 }
 
-/* ----------- NAVEGAÇÃO ----------- */
 
 nav {
   background-color: #0d79d8;
@@ -56,14 +54,12 @@ nav {
   color: #00ff15;
 }
 
-/* ----------- HEADER ----------- */
 
 header img {
   max-width: 300px;
   height: auto;
 }
 
-/* ----------- SEÇÕES ----------- */
 
 section {
   padding: 40px 0;
@@ -85,7 +81,6 @@ p {
   margin-bottom: 15px;
 }
 
-/* ----------- VAGAS ----------- */
 
 .vagas {
   display: flex;
@@ -120,7 +115,6 @@ p {
   margin-top: 10px;
 }
 
-/* ----------- BOTÕES ----------- */
 
 .btn-vaga,
 .botao-curso {
@@ -150,7 +144,6 @@ p {
   background-color: #0056b3;
 }
 
-/* ----------- FOOTER ----------- */
 
 footer {
   background-color: #0d79d8;
@@ -166,7 +159,6 @@ footer {
   line-height: 1.5;
 }
 
-/* ----------- RESPONSIVO ----------- */
 
 /* Tablet */
 @media (max-width: 800px) {
@@ -232,4 +224,13 @@ footer {
     font-size: 11px;
     padding: 20px 10px;
   }
+  
+.oculto {
+  display: none;
 }
+body.escuro {
+  background: #222;
+  color: #eee;
+}
+}
+
