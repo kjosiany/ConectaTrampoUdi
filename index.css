@@ -43,16 +43,12 @@ nav {
 }
 
 .menu a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 16px;
-  transition: color 0.3s ease;
+  color: var(--nav-link);
+}
+.menu a:hover {
+  color: var(--nav-link-hover);
 }
 
-.menu a:hover {
-  color: #00ff15;
-}
 
 
 header img {
