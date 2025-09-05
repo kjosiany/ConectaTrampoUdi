@@ -9,9 +9,10 @@ body {
 }
 
 :root {
-  --nav-link: #fff;          
-  --nav-link-hover: #fdd835; 
+  --nav-link: #fff;       
+  --nav-link-hover: #dbeafe; 
 }
+
 
 .container {
   max-width: 1100px;
