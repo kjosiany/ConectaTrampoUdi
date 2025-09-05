@@ -9,8 +9,8 @@ body {
 }
 
 :root {
-  --nav-link: #fff;          /* links brancos no fundo azul */
-  --nav-link-hover: #fdd835; /* hover amarelo */
+  --nav-link: #fff;          
+  --nav-link-hover: #fdd835; 
 }
 
 .container {
