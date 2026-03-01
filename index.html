@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ConectaTrampo Udi</title>
 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4275592395904487" crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNH70NR9HT"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,230 +14,227 @@
     gtag('config', 'G-KNH70NR9HT');
   </script>
 
-  <meta name="google-adsense-account" content="ca-pub-4275592395904487">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4275592395904487" crossorigin="anonymous"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 
   <style>
-    footer {
-      background-color: #0d79d8;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 14px;
+    /* BASEADO NO SEU CSS DE BH - ADAPTADO PARA UDI */
+    :root {
+      --bg-color: #eafaf8; /* O verdinho que você pediu */
+      --text-color: #2d3436;
+      --primary: #0d79d8;  /* Azul Uberlândia */
+      --primary-dark: #095ab0;
+      --secondary: #00B398;
+      --white: #ffffff;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --border-radius: 15px;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0; padding: 0;
       line-height: 1.6;
     }
 
-    .footer-content p {
-      max-width: 700px;
-      margin: 0 auto;
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    header { padding: 30px 0; background: transparent; text-align: center; }
+    .logo { max-width: 250px; height: auto; }
+
+    nav { 
+      background-color: var(--primary); 
+      padding: 15px 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    header img {
-      max-width: 200px; 
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 20px auto;
-    }
+    .menu { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
+    .menu a { color: white; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
+    .menu a:hover { color: var(--secondary); }
 
-    .vagas-img {
-      width: 100%;      
-      max-width: 300px;  
-      height: auto;     
-      display: block;
-      margin: 0 auto 10px;
-    }
-
-    .vagas-subtitulo {
+    .hero-section {
       text-align: center;
-      margin-bottom: 20px;
+      padding: 60px 30px;
+      /* Degradê Azul Udi */
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      border-radius: var(--border-radius);
+      margin: 40px 0;
+      box-shadow: 0 10px 30px rgba(13, 121, 216, 0.2);
     }
 
-    .btn-vaga, .botao-curso {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #0d79d8;
-      color: #fff;
+    .hero-section h1 { font-size: 2.5rem; margin: 0 0 15px 0; color: white; }
+    .hero-section p { max-width: 700px; margin: 0 auto 20px; font-size: 1.1rem; opacity: 0.9; }
+
+    .badges { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    .badges span { 
+      background: rgba(255,255,255,0.15); 
+      padding: 6px 18px; 
+      border-radius: 50px; 
+      font-size: 13px; 
+      backdrop-filter: blur(5px);
+    }
+
+    /* BARRA DE PESQUISA (NOVO) */
+    .search-wrapper { position: relative; max-width: 500px; margin: -20px auto 40px; z-index: 10; }
+    .search-wrapper input { 
+      width: 100%; padding: 15px 20px 15px 50px; border-radius: 50px; border: 1px solid #ddd; 
+      outline: none; box-shadow: var(--shadow); font-family: 'Poppins', sans-serif;
+    }
+    .search-wrapper i { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-style: normal; font-size: 20px; }
+
+    main h2 { text-align: center; margin-bottom: 30px; font-weight: 600; color: var(--primary); font-size: 1.8rem; }
+
+    .vagas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+      justify-items: center;
+    }
+
+    .vaga-card {
+      background: var(--white);
+      border-radius: 12px;
       text-decoration: none;
-      border-radius: 8px;
-      margin: 10px 0;
-      transition: background-color 0.3s;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 300px;
+      border: 1px solid #eee;
     }
 
-    .btn-vaga:hover, .botao-curso:hover {
-      background-color: #095ab0;
-       }
-    .menu {
-      text-align: center;
-      margin: 20px 0;
+    .vaga-card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      border-color: var(--primary);
     }
 
-    .menu a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: var(--nav-link); 
-  font-weight: bold;
-}
+    .card-image { height: 160px; background-size: cover; background-position: center; }
 
-.menu a:hover {
-  color: var(--nav-link-hover); 
-  text-decoration: underline;
-}
-   
+    .card-content { padding: 20px; text-align: center; background: white; }
+    .card-content h3 { font-size: 17px; margin: 0 0 12px 0; color: #333; }
+    .card-content span { color: var(--primary); font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
 
+    .cta-box { background: var(--white); padding: 50px 30px; border-radius: var(--border-radius); text-align: center; margin: 40px 0; box-shadow: var(--shadow); }
+    .cta-box.alt { border-top: 5px solid var(--secondary); }
+
+    .btn-vaga, .botao-curso { padding: 15px 35px; border-radius: 50px; color: white; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; margin-top: 15px; }
+    .btn-vaga { background: var(--primary); }
+    .btn-vaga:hover { background: var(--primary-dark); transform: scale(1.05); }
+
+    .botao-curso { background: var(--secondary); }
+    .botao-curso:hover { background: #008f7a; transform: scale(1.05); }
+
+    .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); z-index: 999; transition: 0.3s; }
+
+    footer { background: #1a1a1a; color: #999; padding: 50px 20px; text-align: center; margin-top: 80px; }
+    .footer-content a { color: #fff; text-decoration: none; font-size: 14px; }
+
+    @media (max-width: 600px) {
+      .hero-section { padding: 40px 20px; margin: 20px 0; }
+      .hero-section h1 { font-size: 1.8rem; }
+      .vagas-grid { grid-template-columns: 1fr; } 
+      .vaga-card { max-width: 100%; }
+      .menu { gap: 15px; }
+    }
   </style>
 </head>
 <body>
-  <header class="center">
-    <img src="./img/ConectaTrampo.png" alt="Logo ConectaTrampo" />
+
+  <header>
+    <img src="./img/ConectaTrampo.png" alt="Logo ConectaTrampo" class="logo" />
   </header>
 
   <nav>
     <div class="menu">
-      <a href="#divulgue">Divulgue sua Vaga</a>
-      <a href="#especialize-se">Especialize-se</a>
-      <a href="#sobre-nos">Sobre Nós</a>
+      <a href="#vagas">Vagas</a>
+      <a href="#especialize-se">Cursos</a>
+      <a href="https://www.instagram.com/conectatrampoudi/" target="_blank">Instagram</a>
       <a href="#contato">Contato</a>
     </div>
   </nav>
 
   <div class="container">
     <main>
-      <section class="intro" style="margin-bottom: 25px;">
-        <p><strong>Bem-vindo ao ConectaTrampo Udi!</strong></p>
-        <p>Somos um projeto independente e gratuito que organiza e divulga vagas de emprego publicadas em canais públicos de Uberlândia - MG.</p>
-        <p>Nosso objetivo é facilitar o acesso às oportunidades, principalmente pra quem não tem tempo ou acesso fácil à informação. Todas as vagas são gratuitas e não temos vínculo com as empresas.</p>
-        <p>📌 <strong>Especialize-se:</strong> Também reunimos cursos, oficinas e iniciativas que ajudam na qualificação profissional. Confira a aba “Especialize-se” para ver oportunidades de aprendizado.</p>
-        <p>🤝 <strong>Quer divulgar uma vaga?</strong> Empresas e contratantes podem enviar vagas através da aba “Divulgue sua vaga”. A divulgação é 100% gratuita e voltada à comunidade local.</p>
-
-        <h2>Vagas De Emprego Em Uberlândia MG</h2>
-        <section class="vagas">
-      
-<a href="vagas06-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 06/02/2026</h3> </a>
-    <a href="vagas09-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 09/02/2026</h3>
-        </a>
- <a href="vagas10-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 10/02/2026</h3>
-        </a>
-<a href="vagas11-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 11/02/2026</h3>
-        </a>
-<a href="vagas12-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 12/02/2026</h3>
-        </a>
-<a href="vagas13-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 13/02/2026</h3>
-        </a>
-          <a href="vagas18-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 18/02/2026</h3>
-        </a>
-             <a href="vagas19-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 19/02/2026</h3>
-        </a>
-           <a href="vagas20-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 20/02/2026</h3>
-        </a>
-           <a href="vagas23-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 23/02/2026</h3>
-        </a>
-          <a href="vagas24-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 24/02/2026</h3>
-        </a>
-            <a href="vagas25-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 25/02/2026</h3>
-        </a>
-            <a href="vagas27-02.html" target="_blank">
-          <img src="./img/carteiradetrabalho.jpeg" alt="vagas img" class="vagas-img" />
-          <h3 class="vagas-subtitulo">Vagas 27/02/2026</h3>
-        </a>
+      <section class="hero-section">
+        <h1>ConectaTrampo Udi 🚀</h1>
+        <p>A ponte gratuita entre você e sua próxima oportunidade em Uberlândia e região.</p>
+        <div class="badges">
+          <span>📍 Uberlândia - MG</span>
+          <span>💎 Gratuito</span>
+          <span>📸 @conectatrampoudi</span>
+        </div>
       </section>
+
+      <div class="search-wrapper">
+        <i>🔍</i>
+        <input type="text" id="inputBusca" placeholder="Buscar vagas por data (ex: 27/02)...">
+      </div>
+
+      <h2 id="vagas">Vagas Recentes em Uberlândia</h2>
+
+      <div class="vagas-grid">
+        <a href="vagas27-02.html" class="vaga-card">
+          <div class="card-image" style="background-image: url('./img/carteiradetrabalho.jpeg');"></div>
+          <div class="card-content">
+            <h3>Vagas 27/02/2026</h3>
+            <span>Ver Detalhes →</span>
+          </div>
+        </a>
+
+        <a href="vagas25-02.html" class="vaga-card">
+          <div class="card-image" style="background-image: url('./img/carteiradetrabalho.jpeg');"></div>
+          <div class="card-content">
+            <h3>Vagas 25/02/2026</h3>
+            <span>Ver Detalhes →</span>
+          </div>
+        </a>
         
+        </div>
 
-   
-    <section class="aviso" style="background-color: #fffbe6; border: 1px solid #f5c518; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
-  <p><strong>🚨 Aviso:</strong> Todas as vagas aqui são <strong>gratuitas</strong> e públicas. Não cobramos nada para divulgar e não temos vínculo com as empresas.</p>
-  <p>⚠️ <strong>Nunca pague para se candidatar</strong> e não envie documentos pessoais por WhatsApp sem confirmação.</p>
-</section>
-
-
-      <section id="divulgue">
+      <div class="cta-box">
         <h2>Divulgue sua Vaga</h2>
-        <p>Empresas podem enviar vagas para publicação.</p>
-        <p>Preencha o formulário abaixo para anunciar suas vagas:</p>
-        <a href="https://docs.google.com/forms/d/1r1Go5g5SUlr4zO73psSQ-6kk-DuTfilvA2mshFowV3c/viewform?pli=1&pli=1&edit_requested=true" target="_blank" class="btn-vaga">
-          Divulgue sua Vaga📢
-        </a>
-      </section>
+        <p>Anuncie gratuitamente para nossa comunidade de Uberlândia.</p>
+        <a href="https://docs.google.com/forms/d/1r1Go5g5SUlr4zO73psSQ-6kk-DuTfilvA2mshFowV3c/" target="_blank" class="btn-vaga">Divulgue Agora 📢</a>
+      </div>
 
-      <section id="especialize-se">
+      <div class="cta-box alt" id="especialize-se">
         <h2>Especialize-se</h2>
-        <p>Quer dar o primeiro passo rumo ao seu crescimento profissional de forma Gratuita? Aproveite esta oportunidade de aprendizado e destaque-se ainda mais nos processos seletivos!</p>
-        <a href="formalize.html" target="_blank" class="botao-curso">Acessar os Cursos🎓</a>
-        <p>⚠️ Importante: não oferecemos ou ministramos esses cursos — apenas direcionamos você para conteúdos de qualidade que podem impulsionar a sua formação.</p>
-      </section>
+        <p>Cursos e oficinas para sua qualificação profissional.</p>
+        <a href="formalize.html" target="_blank" class="botao-curso">Acessar Cursos 🎓</a>
+      </div>
 
-      <section id="sobre-nos">
-        <h2>Sobre Nós</h2>
-        <p>O <strong>ConectaTrampo Udi</strong> nasceu com um propósito simples: conectar quem procura trabalho com quem precisa contratar, de forma rápida, gratuita e sem enrolação.</p>
-        <p>Somos de Uberlândia e entendemos os desafios da nossa cidade. Aqui, você encontra <strong>vagas reais</strong>, com <strong>contato direto</strong> e <strong>sem cadastro obrigatório</strong>. Também indicamos <strong>cursos gratuitos</strong> para ajudar no seu desenvolvimento profissional.</p>
-        <p>Feito por quem é da cidade, pra quem vive a realidade de verdade👥.</p>
-      </section>
+    </main>
+  </div>
 
-     <section id="contato">
-  <h2>Contato</h2>
-  <p>Email: <a href="mailto:contato@conectatrampoudi.com.br">contato@conectatrampoudi.com.br</a></p>
-  <p>Nos siga no Instagram: <a href="https://www.instagram.com/conectatrampoudi/" target="_blank">Instagram</a></p>
-  <p>Entre no nosso grupo do WhatsApp: <a href="https://chat.whatsapp.com/JoKaT26b6Qy4Qx727bF16B" target="_blank">Grupo WhatsApp</a></p>
-</section>
-
+  <a href="https://chat.whatsapp.com/JoKaT26b6Qy4Qx727bF16B" class="whatsapp-float" target="_blank">Grupo WhatsApp 💬</a>
 
   <footer>
     <div class="footer-content">
-      <p>
-        © 2026 — Todos os direitos são reservados às empresas anunciadas.<br>
-        Este site apenas organiza e divulga vagas de emprego já publicadas em canais públicos de Uberlândia.<br>
-        Não cobramos pela divulgação nem temos vínculo direto com as empresas listadas.<br>
-        Caso alguma empresa deseje remover ou alterar uma vaga publicada, entre em contato.
-      </p> 
-
-      <a class="link-priv" href="privacidade.html" target="_blank">Política de Privacidade</a>
+      <p>© 2026 — ConectaTrampo Udi</p>
+      <a href="privacidade.html">Política de Privacidade</a>
     </div>
-
-    <ins class="adsbygoogle"
-       style="display:block; text-align:center; margin: 20px auto;"
-       data-ad-client="ca-pub-4275592395904487"
-       data-ad-slot="1234567890"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
   </footer>
+
+  <script>
+    // Script de busca funcionando
+    const inputBusca = document.getElementById('inputBusca');
+    const cards = document.querySelectorAll('.vaga-card');
+
+    inputBusca.addEventListener('input', () => {
+      const termo = inputBusca.value.toLowerCase();
+      cards.forEach(card => {
+        const txt = card.innerText.toLowerCase();
+        card.style.display = txt.includes(termo) ? 'flex' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
