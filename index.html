@@ -86,11 +86,12 @@
 
   main h2 { text-align: center; margin-bottom: 30px; font-weight: 600; color: var(--primary); font-size: 1.8rem; }
 
-  
+  /* AJUSTE PRINCIPAL */
   .vagas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: stretch;
   }
 
   .vaga-card {
@@ -99,24 +100,31 @@
     overflow: hidden;
     text-align: center;
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--text-color); /* Corrigido de var(--text-dark) */
     box-shadow: var(--shadow);
     transition: transform 0.3s;
     border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
+
   .vaga-card:hover {
     transform: translateY(-8px);
   }
+
   .vaga-card img {
     width: 100%;
-    height: 140px;
+    height: 160px;
     object-fit: cover;
   }
+
   .vaga-card h3 {
-    font-size: 15px;
+    font-size: 16px;
     padding: 15px;
     margin: 0;
-    color: var(--primary);
+    color: #333;
+    flex-grow: 1; /* Faz o título ocupar o espaço e alinhar os botões */
   }
 
   .card-image { height: 160px; background-size: cover; background-position: center; }
@@ -128,7 +136,7 @@
   .cta-box { background: var(--white); padding: 50px 30px; border-radius: var(--border-radius); text-align: center; margin: 40px 0; box-shadow: var(--shadow); }
   .cta-box.alt { border-top: 5px solid var(--secondary); }
 
-  .btn-vaga, .botao-curso { padding: 15px 35px; border-radius: 50px; color: white; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; margin-top: 15px; }
+  .btn-vaga, .botao-curso { padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; margin: 10px 15px 20px; font-size: 13px; }
   .btn-vaga { background: var(--primary); }
   .btn-vaga:hover { background: var(--primary-dark); transform: scale(1.05); }
 
@@ -140,21 +148,23 @@
   footer { background: #1a1a1a; color: #999; padding: 50px 20px; text-align: center; margin-top: 80px; }
   .footer-content a { color: #fff; text-decoration: none; font-size: 14px; }
 
+  /* RESPONSIVIDADE PARA CELULAR */
   @media (max-width: 600px) {
     .hero-section { padding: 40px 20px; margin: 20px 0; }
     .hero-section h1 { font-size: 1.8rem; }
     
-    
     .vagas-grid { 
-      grid-template-columns: repeat(2, 1fr); 
-      gap: 15px;
+      grid-template-columns: repeat(2, 1fr); /* Força 2 colunas no celular */
+      gap: 12px;
+      padding: 5px;
     } 
     
-    .vaga-card h3 { font-size: 13px; padding: 10px; }
-    .vaga-card { max-width: 100%; }
-    .menu { gap: 15px; }
+    .vaga-card h3 { font-size: 14px; padding: 10px; }
+    .btn-vaga { padding: 10px 15px; font-size: 11px; margin-bottom: 15px; }
+    .vaga-card img { height: 120px; }
   }
 </style>
+
 
 
 </head>
