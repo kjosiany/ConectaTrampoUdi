@@ -3,148 +3,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formalize-se | ConectaTrampo</title>
+  <title>Formalize-se | ConectaTrampo Udi</title>
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4275592395904487"
-     crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4275592395904487" crossorigin="anonymous"></script>
 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --primary: #0d79d8;  
+      --primary-dark: #095ab0;
+      --bg-soft: #eafaf8;  
+      --white: #ffffff;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f2f4f8;
+      background-color: var(--bg-soft);
       color: #333;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 900px;
-      margin: auto;
+      max-width: 850px;
+      margin: 0 auto;
       padding: 20px;
     }
 
     header {
       text-align: center;
-      padding: 20px 0;
+      padding: 30px 0;
     }
 
     header img {
-      max-width: 250px;
+      max-width: 220px;
+      height: auto;
     }
 
-    #formalize h2 {
-      font-size: 26px;
-      margin-bottom: 20px;
-      color: #222;
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 35px;
+      font-weight: 600;
+      font-size: 1.6rem;
     }
 
     .curso-box {
-      background-color: #ffffff;
-      border-radius: 10px;
-      padding: 20px;
+      background-color: var(--white);
+      border-radius: 15px;
+      padding: 25px;
       margin-bottom: 25px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--shadow);
+      border: 1px solid #eee;
+      transition: transform 0.3s ease;
+    }
+
+    .curso-box:hover {
+      transform: translateY(-5px);
     }
 
     .curso-box h4 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: #007BFF;
+      font-size: 1.3rem;
+      margin: 0 0 12px 0;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .curso-box p {
-      font-size: 15px;
-      line-height: 1.6;
+      font-size: 0.95rem;
       color: #555;
+      margin-bottom: 20px;
     }
 
     .botao-curso {
       display: inline-block;
-      margin-top: 10px;
-      background-color: #007BFF;
+      background-color: var(--primary);
       color: #fff;
       text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background 0.3s;
+      padding: 12px 25px;
+      border-radius: 50px; 
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
     }
 
     .botao-curso:hover {
-      background-color: #0056b3;
+      background-color: var(--primary-dark);
+      box-shadow: 0 5px 15px rgba(13, 121, 216, 0.3);
+    }
+
+    .btn-voltar {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
     }
 
     .aviso {
-      font-size: 14px;
+      font-size: 13px;
       margin-top: 40px;
-      color: #a94442;
+      padding: 20px;
+      background: rgba(0,0,0,0.03);
+      border-radius: 10px;
+      color: #777;
+      text-align: center;
       font-style: italic;
+    }
 
-      
+    .ad-container {
+      text-align: center;
+      margin: 30px 0;
+      overflow: hidden;
+    }
+
+    @media (max-width: 600px) {
+      h2 { font-size: 1.3rem; }
+      .curso-box { padding: 20px; }
     }
   </style>
 </head>
 <body>
-  <header class="center">
+
+  <header>
     <img src="./img/ConectaTrampo.png" alt="Logo ConectaTrampo" />
   </header>
 
   <main class="container">
+    <a href="index.html" class="btn-voltar">← Voltar para Vagas</a>
+
     <section id="formalize">
       <h2>📚 Plataformas com Cursos Gratuitos e Certificados</h2>
 
       <div class="curso-box">
         <h4>🎓 Fundação Bradesco</h4>
-        <p>Cursos em TI, Finanças, Administração, Educação e mais. Totalmente gratuitos e com certificado.</p>
-        <a href="https://www.ev.org.br/" target="_blank" class="botao-curso">Acesse o Site</a>
+        <p>Cursos em TI, Finanças, Administração, Educação e mais. Totalmente gratuitos e com certificado reconhecido.</p>
+        <a href="https://www.ev.org.br/" target="_blank" class="botao-curso">Acessar Cursos</a>
       </div>
 
       <div class="curso-box">
         <h4>🛠 SENAI</h4>
-        <p>Capacitação técnica e profissional com foco no mercado de trabalho. Cursos em indústria, TI, gestão, entre outros.</p>
-        <a href="https://www.sp.senai.br/" target="_blank" class="botao-curso">Acesse o Site</a>
+        <p>Capacitação técnica e profissional com foco no mercado de trabalho. Cursos em indústria, TI e gestão.</p>
+        <a href="https://www.sp.senai.br/" target="_blank" class="botao-curso">Acessar Cursos</a>
+      </div>
+
+      <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4275592395904487"
+             data-ad-slot="4418504923"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
 
       <div class="curso-box">
         <h4>💼 Sebrae</h4>
-        <p>Para quem quer empreender: marketing, finanças, gestão e inovação. Cursos práticos e com certificado.</p>
-        <a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline" target="_blank" class="botao-curso">Acesse o Site</a>
+        <p>Ideal para empreendedores: marketing, finanças, gestão e inovação. Cursos práticos com certificado.</p>
+        <a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline" target="_blank" class="botao-curso">Acessar Cursos</a>
       </div>
 
       <div class="curso-box">
         <h4>🏛 FGV</h4>
-        <p>Cursos de curta duração em áreas como direito, finanças, marketing, economia e administração.</p>
-        <a href="https://educacao-executiva.fgv.br/cursos/gratuitos" target="_blank" class="botao-curso">Acesse o Site</a>
-      </div>
-
-      <div class="curso-box">
-        <h4>🎓 Cruzeiro do Sul Virtual</h4>
-        <p>Cursos livres em várias áreas, como saúde, educação, tecnologia e negócios. Conteúdo acessível e certificado gratuito.</p>
-        <a href="https://cursos.cruzeirodosulvirtual.com.br/cursos-livres" target="_blank" class="botao-curso">Acesse o Site</a>
+        <p>Cursos de curta duração em áreas como direito, finanças, marketing, economia e administração pública.</p>
+        <a href="https://educacao-executiva.fgv.br/cursos/gratuitos" target="_blank" class="botao-curso">Acessar Cursos</a>
       </div>
 
       <div class="curso-box">
         <h4>💻 Microsoft Learn</h4>
-        <p>Aprenda programação, inteligência artificial, banco de dados e mais com cursos oficiais da Microsoft.</p>
-        <a href="https://learn.microsoft.com/pt-br/training/" target="_blank" class="botao-curso">Acesse o Site</a>
+        <p>Aprenda programação, inteligência artificial e computação em nuvem com a trilha oficial da Microsoft.</p>
+        <a href="https://learn.microsoft.com/pt-br/training/" target="_blank" class="botao-curso">Acessar Cursos</a>
       </div>
-      <div class="center">
-  <ins class="adsbygoogle"
-       style="display:inline-block;width:728px;height:90px"
-       data-ad-client="ca-pub-4275592395904487"
-       data-ad-slot="4418504923"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
 
       <p class="aviso">
-        ⚠️ Não oferecemos suporte direto — apenas indicamos plataformas confiáveis para apoiar a sua formação profissional.
+        ⚠️ <strong>Atenção:</strong> O ConectaTrampo apenas indica estas plataformas. Não temos vínculo com as instituições e não emitimos os certificados diretamente.
       </p>
     </section>
   </main>
-</body>
 
+  <footer style="text-align: center; padding: 40px 0; color: #999; font-size: 12px;">
+    © 2026 ConectaTrampo Udi
+  </footer>
+
+</body>
 </html>
