@@ -19,14 +19,15 @@
   
 <style>
   :root {
-    --bg-color: #eafaf8; 
-    --text-color: #2d3436;
-    --primary: #0d79d8;  
-    --primary-dark: #095ab0;
-    --secondary: #00B398;
+    /* AJUSTE DE CORES PARA FICAR IGUAL AO PRINT */
+    --bg-color: #f8f9fa; /* Cinza bem clarinho de fundo */
+    --text-color: #333333;
+    --primary: #d32f2f;  /* Vermelho do print */
+    --primary-dark: #b71c1c;
+    --secondary: #d32f2f; 
     --white: #ffffff;
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    --border-radius: 15px;
+    --shadow: 0 2px 15px rgba(0, 0, 0, 0.05); /* Sombra mais suave */
+    --border-radius: 12px;
   }
 
   body {
@@ -42,9 +43,10 @@
   header { padding: 30px 0; background: transparent; text-align: center; }
   .logo { max-width: 250px; height: auto; }
 
+  /* NAV: Agora com o vermelho do print */
   nav { 
     background-color: var(--primary); 
-    padding: 15px 0; 
+    padding: 12px 0; 
     position: sticky; 
     top: 0; 
     z-index: 100;
@@ -52,44 +54,45 @@
   }
 
   .menu { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
-  .menu a { color: white; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
-  .menu a:hover { color: var(--secondary); }
+  .menu a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 500; /* Um pouco menos negrito */
+    font-size: 14px; 
+    text-transform: uppercase; /* No print parece estar em caixa alta */
+    transition: 0.3s; 
+  }
+  .menu a:hover { opacity: 0.8; }
 
+  /* HERO SECTION: Fundo branco com borda lateral vermelha como no print */
   .hero-section {
-    text-align: center;
-    padding: 60px 30px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
+    text-align: left; /* Alinhado à esquerda conforme o print */
+    padding: 40px;
+    background: var(--white);
+    color: var(--text-color);
     border-radius: var(--border-radius);
     margin: 40px 0;
-    box-shadow: 0 10px 30px rgba(13, 121, 216, 0.2);
+    box-shadow: var(--shadow);
+    border-left: 8px solid var(--primary); /* Aquela faixa vermelha lateral */
   }
 
-  .hero-section h1 { font-size: 2.5rem; margin: 0 0 15px 0; color: white; }
-  .hero-section p { max-width: 700px; margin: 0 auto 20px; font-size: 1.1rem; opacity: 0.9; }
+  .hero-section h1 { font-size: 1.8rem; margin: 0 0 15px 0; color: var(--primary); }
+  .hero-section p { margin: 0; font-size: 1.1rem; color: #555; }
+  .hero-section b, .hero-section strong { color: #000; }
 
-  .badges { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-  .badges span { 
-    background: rgba(255,255,255,0.15); 
-    padding: 6px 18px; 
-    border-radius: 50px; 
-    font-size: 13px; 
-    backdrop-filter: blur(5px);
+  /* TÍTULO DAS VAGAS */
+  main h2 { 
+    text-align: center; 
+    margin: 50px 0 30px; 
+    font-weight: 700; 
+    color: var(--primary); 
+    font-size: 2rem; 
   }
 
-  .search-wrapper { position: relative; max-width: 500px; margin: -20px auto 40px; z-index: 10; }
-  .search-wrapper input { 
-    width: 100%; padding: 15px 20px 15px 50px; border-radius: 50px; border: 1px solid #ddd; 
-    outline: none; box-shadow: var(--shadow); font-family: 'Poppins', sans-serif;
-  }
-  .search-wrapper i { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-style: normal; font-size: 20px; }
-
-  main h2 { text-align: center; margin-bottom: 30px; font-weight: 600; color: var(--primary); font-size: 1.8rem; }
-
-  /* ALTERAÇÃO: Forçado 2 colunas (dupla) em todas as telas */
+  /* GRID DE VAGAS */
   .vagas-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas no desktop para igualar o print */
     gap: 20px;
   }
 
@@ -102,59 +105,64 @@
     color: var(--text-color);
     box-shadow: var(--shadow);
     transition: transform 0.3s;
-    border: 1px solid #eee;
+    border: 1px solid #f0f0f0;
     display: flex;
     flex-direction: column;
   }
+  
   .vaga-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
   }
+
   .vaga-card img {
     width: 100%;
-    height: 180px; 
+    height: 150px; 
     object-fit: cover;
+    padding: 10px; /* Espaçamento interno da imagem se desejar */
+    box-sizing: border-box;
   }
+
+  /* Texto da data no card */
   .vaga-card h3 {
     font-size: 16px;
     padding: 15px;
     margin: 0;
     color: var(--primary);
+    font-weight: 600;
   }
 
-  .card-image { height: 160px; background-size: cover; background-position: center; }
+  /* SEÇÃO DIVULGUE SUA VAGA */
+  .cta-box { 
+    background: var(--white); 
+    padding: 40px; 
+    border-radius: var(--border-radius); 
+    text-align: center; 
+    margin: 40px 0; 
+    box-shadow: var(--shadow); 
+  }
+  
+  .cta-box h2 { color: var(--primary); margin-top: 0; }
 
-  .card-content { padding: 20px; text-align: center; background: white; }
-  .card-content h3 { font-size: 17px; margin: 0 0 12px 0; color: #333; }
-  .card-content span { color: var(--primary); font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
-
-  .cta-box { background: var(--white); padding: 50px 30px; border-radius: var(--border-radius); text-align: center; margin: 40px 0; box-shadow: var(--shadow); }
-  .cta-box.alt { border-top: 5px solid var(--secondary); }
-
-  .btn-vaga, .botao-curso { padding: 15px 35px; border-radius: 50px; color: white; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; margin-top: 15px; }
+  /* Botões e Footer mantidos conforme seu original, apenas ajustando cores */
+  .btn-vaga, .botao-curso { padding: 12px 30px; border-radius: 8px; color: white; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; margin-top: 15px; }
   .btn-vaga { background: var(--primary); }
-  .btn-vaga:hover { background: var(--primary-dark); transform: scale(1.05); }
+  .botao-curso { background: #333; }
 
-  .botao-curso { background: var(--secondary); }
-  .botao-curso:hover { background: #008f7a; transform: scale(1.05); }
-
-  .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); z-index: 999; transition: 0.3s; }
+  .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); z-index: 999; }
 
   footer { background: #1a1a1a; color: #999; padding: 50px 20px; text-align: center; margin-top: 80px; }
-  .footer-content a { color: #fff; text-decoration: none; font-size: 14px; }
+
+  /* Responsividade para manter 2 colunas no celular */
+  @media (max-width: 900px) {
+    .vagas-grid { grid-template-columns: repeat(2, 1fr); }
+  }
 
   @media (max-width: 600px) {
-    .hero-section { padding: 40px 20px; margin: 20px 0; }
-    .hero-section h1 { font-size: 1.8rem; }
-    
-
-    .vagas-grid { 
-      grid-template-columns: repeat(2, 1fr); 
-      gap: 12px;
-    } 
-    
-    .vaga-card h3 { font-size: 14px; padding: 10px; }
-    .vaga-card img { height: 130px; }
-    .menu { gap: 15px; }
+    .hero-section { padding: 25px; border-left-width: 5px; }
+    .hero-section h1 { font-size: 1.5rem; }
+    .vagas-grid { gap: 10px; }
+    .vaga-card h3 { font-size: 13px; padding: 10px; }
   }
 </style>
 
@@ -263,4 +271,5 @@
   </script>
 </body>
 </html>
+
 
