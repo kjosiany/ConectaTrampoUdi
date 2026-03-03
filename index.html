@@ -16,11 +16,13 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 
+ 
   <style>
+    /* BASEADO NO SEU CSS DE BH - ADAPTADO PARA UDI */
     :root {
-      --bg-color: #eafaf8; 
+      --bg-color: #eafaf8; /* O verdinho que você pediu */
       --text-color: #2d3436;
-      --primary: #0d79d8;  
+      --primary: #0d79d8;  /* Azul Uberlândia */
       --primary-dark: #095ab0;
       --secondary: #00B398;
       --white: #ffffff;
@@ -77,6 +79,7 @@
       backdrop-filter: blur(5px);
     }
 
+    /* BARRA DE PESQUISA (NOVO) */
     .search-wrapper { position: relative; max-width: 500px; margin: -20px auto 40px; z-index: 10; }
     .search-wrapper input { 
       width: 100%; padding: 15px 20px 15px 50px; border-radius: 50px; border: 1px solid #ddd; 
@@ -88,25 +91,12 @@
 
     .vagas-grid {
       display: grid;
-     grid-template-columns: repeat(4, 1fr); 
-  gap: 25px;
-  margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
       justify-items: center;
     }
-    /* tablet */
 
-@media (max-width: 1024px) {
-  .vagas-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Celular */
-@media (max-width: 600px) {
-  .vagas-grid {
-    grid-template-columns: 1fr;
-  }
-}
     .vaga-card {
       background: var(--white);
       border-radius: 12px;
@@ -148,8 +138,16 @@
     footer { background: #1a1a1a; color: #999; padding: 50px 20px; text-align: center; margin-top: 80px; }
     .footer-content a { color: #fff; text-decoration: none; font-size: 14px; }
 
+    @media (max-width: 600px) {
+      .hero-section { padding: 40px 20px; margin: 20px 0; }
+      .hero-section h1 { font-size: 1.8rem; }
+      .vagas-grid { grid-template-columns: 1fr; } 
+      .vaga-card { max-width: 100%; }
+      .menu { gap: 15px; }
     }
   </style>
+
+  
 </head>
 <body>
 
@@ -264,6 +262,7 @@
   </script>
 </body>
 </html>
+
 
 
 
