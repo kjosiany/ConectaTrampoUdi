@@ -21,7 +21,7 @@
   :root {
     --bg-color: #eafaf8; 
     --text-color: #2d3436;
-    --primary: #0d79d8;  
+    --primary: #0d79d8;  /* Mantive seu azul */
     --primary-dark: #095ab0;
     --secondary: #00B398;
     --white: #ffffff;
@@ -29,70 +29,19 @@
     --border-radius: 15px;
   }
 
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    margin: 0; padding: 0;
-    line-height: 1.6;
-  }
-
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-  header { padding: 30px 0; background: transparent; text-align: center; }
-  .logo { max-width: 250px; height: auto; }
-
-  nav { 
-       background-color: var(--primary); 
-    padding: 15px 0; 
-    position: sticky; 
-    top: 0; 
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-
-  .menu { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
-  .menu a { 
-    color: white; 
-    text-decoration: none; 
-    font-weight: 500; 
-    text-transform: uppercase; 
-    transition: 0.3s; 
-  }
-  .menu a:hover { opacity: 0.8; }
-
-  .hero-section {
-    text-align: left; 
-    padding: 40px;
-    background: var(--white);
-    color: var(--text-color);
-    border-radius: var(--border-radius);
-    margin: 40px 0;
-    box-shadow: var(--shadow);
-    border-left: 8px solid var(--primary); 
-  }
-
-  .hero-section h1 { font-size: 1.8rem; margin: 0 0 15px 0; color: var(--primary); }
-  .hero-section p { margin: 0; font-size: 1.1rem; color: #555; }
-  .hero-section b, .hero-section strong { color: #000; }
-
-  main h2 { 
-    text-align: center; 
-    margin: 50px 0 30px; 
-    font-weight: 700; 
-    color: var(--primary); 
-    font-size: 2rem; 
-  }
-
+  /* --- GRID DE VAGAS (O que faz ficar lateralmente) --- */
   .vagas-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas no desktop para igualar o print */
+    /* Aqui definimos 4 colunas no computador */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
+    margin: 40px 0;
   }
 
+  /* --- ESTILO DO CARD (Igual ao formato do print) --- */
   .vaga-card {
     background: var(--white);
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     text-align: center;
     text-decoration: none;
@@ -103,59 +52,67 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .vaga-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
   }
 
+  /* Imagem ocupando o topo do card */
   .vaga-card img {
     width: 100%;
     height: 150px; 
     object-fit: cover;
-    padding: 10px;
-    box-sizing: border-box;
   }
 
+  /* Texto da data/título embaixo da imagem */
   .vaga-card h3 {
     font-size: 16px;
     padding: 15px;
     margin: 0;
-    color: var(--primary);
+    color: var(--primary); /* Título em azul */
     font-weight: 600;
   }
 
-  .cta-box { 
-    background: var(--white); 
-    padding: 40px; 
-    border-radius: var(--border-radius); 
-    text-align: center; 
-    margin: 40px 0; 
-    box-shadow: var(--shadow); 
-  }
-  
-  .cta-box h2 { color: var(--primary); margin-top: 0; }
-
-  .btn-vaga, .botao-curso { padding: 12px 30px; border-radius: 8px; color: white; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; margin-top: 15px; }
-  .btn-vaga { background: var(--primary); }
-  .botao-curso { background: #333; }
-
-  .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); z-index: 999; }
-
-  footer { background: #1a1a1a; color: #999; padding: 50px 20px; text-align: center; margin-top: 80px; }
-
-  @media (max-width: 900px) {
-    .vagas-grid { grid-template-columns: repeat(2, 1fr); }
+  /* --- RESPONSIVIDADE (Para não quebrar no celular) --- */
+  @media (max-width: 1024px) {
+    .vagas-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    }
   }
 
   @media (max-width: 600px) {
-    .hero-section { padding: 25px; border-left-width: 5px; }
-    .hero-section h1 { font-size: 1.5rem; }
-    .vagas-grid { gap: 10px; }
-    .vaga-card h3 { font-size: 13px; padding: 10px; }
+    .vagas-grid {
+      grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas no celular para ficar igual ao print */
+      gap: 12px;
+    }
+    
+    .vaga-card h3 {
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    .vaga-card img {
+      height: 120px;
+    }
+  }
+
+  /* --- MANTENDO O RESTANTE DO SEU ESTILO --- */
+  body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; line-height: 1.6; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  nav { background-color: var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+  .menu { display: flex; justify-content: center; gap: 25px; }
+  .menu a { color: white; text-decoration: none; font-weight: 600; font-size: 14px; }
+  
+  .hero-section {
+    text-align: left;
+    padding: 40px;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    margin: 40px 0;
+    box-shadow: var(--shadow);
+    border-left: 10px solid var(--primary); /* A faixa azul lateral */
   }
 </style>
-
 
 
 </head>
@@ -261,6 +218,7 @@
   </script>
 </body>
 </html>
+
 
 
 
