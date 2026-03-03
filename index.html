@@ -5,13 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ConectaTrampo Udi</title>
 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4275592395904487" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNH70NR9HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KNH70NR9HT');
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 
   <style>
+    /* BASEADO NO SEU CSS DE BH - ADAPTADO PARA UDI */
     :root {
-      --bg-color: #eafaf8; 
+      --bg-color: #eafaf8; /* O verdinho que você pediu */
       --text-color: #2d3436;
-      --primary: #0d79d8; 
+      --primary: #0d79d8;  /* Azul Uberlândia */
       --primary-dark: #095ab0;
       --secondary: #00B398;
       --white: #ffffff;
@@ -19,101 +29,127 @@
       --border-radius: 15px;
     }
 
-    body { 
-      font-family: 'Poppins', sans-serif; 
-      background-color: var(--bg-color); 
-      color: var(--text-color); 
-      margin: 0; 
-      line-height: 1.6; 
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0; padding: 0;
+      line-height: 1.6;
     }
 
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-    header { padding: 20px 0; text-align: center; }
-    .logo { max-width: 220px; height: auto; }
+    header { padding: 30px 0; background: transparent; text-align: center; }
+    .logo { max-width: 250px; height: auto; }
 
-    nav { background-color: var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    .menu { display: flex; justify-content: center; gap: 25px; }
-    .menu a { color: white; text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; }
-
-    .hero-section {
-      text-align: left;
-      padding: 40px;
-      background: var(--white);
-      border-radius: var(--border-radius);
-      margin: 40px 0;
-      box-shadow: var(--shadow);
-      border-left: 10px solid var(--primary); 
+    nav { 
+      background-color: var(--primary); 
+      padding: 15px 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    .hero-section h1 { color: var(--primary); margin-top: 0; }
-    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
-    .badges span { background: #f0f7ff; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid #d0e3f7; }
+    .menu { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
+    .menu a { color: white; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
+    .menu a:hover { color: var(--secondary); }
 
-    h2#vagas { text-align: center; color: var(--primary); margin: 40px 0 20px; font-size: 2rem; }
+    .hero-section {
+      text-align: center;
+      padding: 60px 30px;
+      /* Degradê Azul Udi */
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      border-radius: var(--border-radius);
+      margin: 40px 0;
+      box-shadow: 0 10px 30px rgba(13, 121, 216, 0.2);
+    }
 
-    /* GRID DAS VAGAS - LATERAL */
+    .hero-section h1 { font-size: 2.5rem; margin: 0 0 15px 0; color: white; }
+    .hero-section p { max-width: 700px; margin: 0 auto 20px; font-size: 1.1rem; opacity: 0.9; }
+
+    .badges { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    .badges span { 
+      background: rgba(255,255,255,0.15); 
+      padding: 6px 18px; 
+      border-radius: 50px; 
+      font-size: 13px; 
+      backdrop-filter: blur(5px);
+    }
+
+    /* BARRA DE PESQUISA (NOVO) */
+    .search-wrapper { position: relative; max-width: 500px; margin: -20px auto 40px; z-index: 10; }
+    .search-wrapper input { 
+      width: 100%; padding: 15px 20px 15px 50px; border-radius: 50px; border: 1px solid #ddd; 
+      outline: none; box-shadow: var(--shadow); font-family: 'Poppins', sans-serif;
+    }
+    .search-wrapper i { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-style: normal; font-size: 20px; }
+
+    main h2 { text-align: center; margin-bottom: 30px; font-weight: 600; color: var(--primary); font-size: 1.8rem; }
+
     .vagas-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); 
-      gap: 20px;
-      margin: 40px 0;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+      justify-items: center;
     }
 
     .vaga-card {
       background: var(--white);
-      border-radius: var(--border-radius);
-      overflow: hidden;
+      border-radius: 12px;
       text-decoration: none;
-      color: var(--text-color);
+      overflow: hidden;
       box-shadow: var(--shadow);
-      transition: transform 0.3s;
-      border: 1px solid #eee;
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
-    }
-
-    .vaga-card:hover { transform: translateY(-8px); }
-
-    /* Ajuste para a imagem que está no seu HTML */
-    .card-image {
       width: 100%;
-      height: 150px; 
-      background-size: cover;
-      background-position: center;
+      max-width: 300px;
+      border: 1px solid #eee;
     }
 
-    .card-content { padding: 15px; text-align: center; }
-    .card-content h3 { font-size: 16px; margin: 0 0 10px 0; color: var(--primary); }
-    .card-content span { font-size: 13px; font-weight: 600; color: #666; }
+    .vaga-card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      border-color: var(--primary);
+    }
 
-    .cta-box { background: var(--white); padding: 40px; border-radius: var(--border-radius); text-align: center; margin: 40px 0; box-shadow: var(--shadow); }
+    .card-image { height: 160px; background-size: cover; background-position: center; }
+
+    .card-content { padding: 20px; text-align: center; background: white; }
+    .card-content h3 { font-size: 17px; margin: 0 0 12px 0; color: #333; }
+    .card-content span { color: var(--primary); font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+
+    .cta-box { background: var(--white); padding: 50px 30px; border-radius: var(--border-radius); text-align: center; margin: 40px 0; box-shadow: var(--shadow); }
     .cta-box.alt { border-top: 5px solid var(--secondary); }
-    .btn-vaga, .botao-curso { padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; }
+
+    .btn-vaga, .botao-curso { padding: 15px 35px; border-radius: 50px; color: white; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; margin-top: 15px; }
     .btn-vaga { background: var(--primary); }
+    .btn-vaga:hover { background: var(--primary-dark); transform: scale(1.05); }
+
     .botao-curso { background: var(--secondary); }
+    .botao-curso:hover { background: #008f7a; transform: scale(1.05); }
 
-    .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 25px rgba(37,211,102,0.3); z-index: 999; }
+    .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); z-index: 999; transition: 0.3s; }
 
-    footer { background: #1a1a1a; color: #999; padding: 40px 20px; text-align: center; margin-top: 60px; }
-    footer a { color: #fff; text-decoration: none; font-size: 13px; }
+    footer { background: #1a1a1a; color: #999; padding: 50px 20px; text-align: center; margin-top: 80px; }
+    .footer-content a { color: #fff; text-decoration: none; font-size: 14px; }
 
-    /* Celular */
-    @media (max-width: 900px) {
-      .vagas-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 500px) {
-      .menu { gap: 10px; }
-      .menu a { font-size: 12px; }
-      .vagas-grid { gap: 10px; }
-      .card-content h3 { font-size: 14px; }
+    @media (max-width: 600px) {
+      .hero-section { padding: 40px 20px; margin: 20px 0; }
+      .hero-section h1 { font-size: 1.8rem; }
+      .vagas-grid { grid-template-columns: 1fr; } 
+      .vaga-card { max-width: 100%; }
+      .menu { gap: 15px; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="./img/ConectaTrampo.png" alt="Logo" class="logo" />
+    <img src="./img/ConectaTrampo.png" alt="Logo ConectaTrampo" class="logo" />
   </header>
 
   <nav>
@@ -128,26 +164,23 @@
   <div class="container">
     <main>
       <section class="hero-section">
-        <h1>ConectaTrampo Udi</h1>
+        <h1>ConectaTrampo Udi 🚀</h1>
         <p>A ponte gratuita entre você e sua próxima oportunidade em Uberlândia e região.</p>
         <div class="badges">
           <span>📍 Uberlândia - MG</span>
-          <span>💼 Vagas de Emprego</span>
-          <span>🎓 Cursos Gratuitos</span>
+          <span>💎 Gratuito</span>
+          <span>📸 @conectatrampoudi</span>
         </div>
       </section>
 
-      <h2 id="vagas">Vagas Recentes em Uberlândia</h2>
-                                                            
-      <div class="vagas-grid">
-        <a href="vagas02-03.html" class="vaga-card">
-          <div class="card-image" style="background-image: url('./img/carteiradetrabalho.jpeg');"></div>
-          <div class="card-content">
-            <h3>Vagas 02/03/2026</h3>
-            <span>Ver Detalhes →</span>
-          </div>
-        </a>
+      <div class="search-wrapper">
+        <i>🔍</i>
+        <input type="text" id="inputBusca" placeholder="Buscar vagas por data (ex: 27/02)...">
+      </div>
 
+      <h2 id="vagas">Vagas Recentes em Uberlândia</h2>
+
+      <div class="vagas-grid">
         <a href="vagas27-02.html" class="vaga-card">
           <div class="card-image" style="background-image: url('./img/carteiradetrabalho.jpeg');"></div>
           <div class="card-content">
@@ -155,7 +188,6 @@
             <span>Ver Detalhes →</span>
           </div>
         </a>
-
         <a href="vagas25-02.html" class="vaga-card">
           <div class="card-image" style="background-image: url('./img/carteiradetrabalho.jpeg');"></div>
           <div class="card-content">
@@ -163,15 +195,15 @@
             <span>Ver Detalhes →</span>
           </div>
         </a>
-
-        <a href="vagas24-02.html" class="vaga-card">
+         <a href="vagas24-02.html" class="vaga-card">
           <div class="card-image" style="background-image: url('./img/carteiradetrabalho.jpeg');"></div>
           <div class="card-content">
             <h3>Vagas 24/02/2026</h3>
             <span>Ver Detalhes →</span>
           </div>
         </a>
-      </div>
+        
+        </div>
 
       <div class="cta-box">
         <h2>Divulgue sua Vaga</h2>
@@ -184,15 +216,30 @@
         <p>Cursos e oficinas para sua qualificação profissional.</p>
         <a href="formalize.html" target="_blank" class="botao-curso">Acessar Cursos 🎓</a>
       </div>
+
     </main>
   </div>
 
-  <a href="https://chat.whatsapp.com/JoKaT26b6Qy4Qx727bF16B" class="whatsapp-float" target="_blank">WhatsApp 💬</a>
+  <a href="https://chat.whatsapp.com/JoKaT26b6Qy4Qx727bF16B" class="whatsapp-float" target="_blank">Grupo WhatsApp 💬</a>
 
   <footer>
-    <p>© 2026 — ConectaTrampo Udi</p>
-    <a href="privacidade.html">Política de Privacidade</a>
+    <div class="footer-content">
+      <p>© 2026 — ConectaTrampo Udi</p>
+      <a href="privacidade.html">Política de Privacidade</a>
+    </div>
   </footer>
 
+  <script>
+    const inputBusca = document.getElementById('inputBusca');
+    const cards = document.querySelectorAll('.vaga-card');
+
+    inputBusca.addEventListener('input', () => {
+      const termo = inputBusca.value.toLowerCase();
+      cards.forEach(card => {
+        const txt = card.innerText.toLowerCase();
+        card.style.display = txt.includes(termo) ? 'flex' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
